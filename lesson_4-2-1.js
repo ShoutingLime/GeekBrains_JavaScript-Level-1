@@ -1,9 +1,15 @@
 'use strict';
 
-var str = "Мама мыла раму";
+var str = "Корабли лавировали-лавировали, лавировали-лавировали, да не вылавировали";
 
 function countBs(str) {
-  alert(str.length);
+  var count = 0;
+  for (var i = 0; i < str.length; i++) {
+    if (str.charAt(i) == 'в') {
+      count++;
+    }
+  }
+  return count;
 }
 
-countBs(str);
+alert(countBs(str));
