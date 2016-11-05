@@ -2,6 +2,7 @@
 
   // создаем объект - хранилище  записей
   var users = [{
+    id: 0,
     firstName: 'Dmitry',
     lastName: 'Kozlov',
     birthDay: '16.07.1990',
@@ -9,7 +10,9 @@
       '89001234567',
       '83431234567'
     ]
-  }, {
+  },
+  {
+    id: 1,
     firstName: 'Ivan',
     lastName: 'Petrov',
     birthDay: '08.06.1956',
@@ -22,6 +25,7 @@
   // добавление нового адресата
   function addUser(users) {
     var user = {};
+    user.id = users.length - 1;
     user.firstName = prompt('Введите имя:');
     user.lastName = prompt('Введите фамилию:');
     user.birthDay = prompt('Дату рождения:');
@@ -33,6 +37,12 @@
     }
     users.push(user);
   }
+
+// удаление адресата
+  function deleteUser(users, id) {
+    delete users[id];
+    return users;
+}
 
   addUser(users);
 
