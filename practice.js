@@ -10,8 +10,7 @@
       '89001234567',
       '83431234567'
     ]
-  },
-  {
+  }, {
     id: 1,
     firstName: 'Ivan',
     lastName: 'Petrov',
@@ -38,11 +37,11 @@
     users.push(user);
   }
 
-// удаление адресата
+  // удаление адресата
   function deleteUser(users, id) {
     delete users[id];
     return users;
-}
+  }
 
   addUser(users);
 
@@ -64,3 +63,16 @@
   }
 
   console.log(csvFormat(users));
+
+  function search(value, users) {
+    var result = [];
+    var re = new RegExp(value, 'i');
+
+    users.forEach(function(item) {
+      var findString = item.firstName + ' ' + item.lastName;
+      if (re.test(findString)) {
+        result.push(item);
+      }
+    })
+    return result;
+  }
